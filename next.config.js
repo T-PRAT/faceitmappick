@@ -5,5 +5,8 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
+  images: {
+    domains: ['cdn.faceit.com'],
+  },
 }
 module.exports = nextConfig
