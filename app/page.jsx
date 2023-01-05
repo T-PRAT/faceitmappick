@@ -7,7 +7,6 @@ export default function Home() {
   const Router = useRouter();
   const handleSubmit = (e) => {
     const matchId = e.target.search.value.split("/").pop();
-    console.log(matchId);
     Router.push(`/match/${matchId}`);
     e.preventDefault();
   };

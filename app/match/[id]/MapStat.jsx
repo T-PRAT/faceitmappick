@@ -9,7 +9,7 @@ export default function MapStat({ map, match, win }) {
         <Image
           src={img}
           alt={map}
-          width={70}
+          width={80}
           height={100}
           className="rounded-sm"
         />

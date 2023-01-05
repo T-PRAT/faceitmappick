@@ -47,6 +47,7 @@ const fetchPlayerStat = async (playerId) => {
   );
   const playerStat = await res.json();
   if (!playerStat) {
+    console.error("playerStat not found");
     return {
       notFound: true,
     };
@@ -57,8 +58,8 @@ const fetchPlayerStat = async (playerId) => {
 
 const fetchMapsData = async (matchId) => {
   const match = await fetchMap(matchId);
-  const team1 = match.teams.faction1.roster.map((player) => [player.nickname, player.player_id]);
-  const team2 = match.teams.faction2.roster.map((player) => [player.nickname, player.player_id]);
+  const team1 = match.teams.faction1?.roster.map((player) => [player.nickname, player.player_id]);
+  const team2 = match.teams.faction2?.roster.map((player) => [player.nickname, player.player_id]);
   const team1Stat = [];
   const team2Stat = [];
   for (const player of team1) {
